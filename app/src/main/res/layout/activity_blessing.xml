@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/qifu_main_bg1">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="0.20" />
+
+        <ImageView
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="0.40"
+            android:background="@mipmap/gp_151" />
+
+        <View
+            android:id="@+id/line3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="0.40"
+            android:background="@mipmap/qifu_new_desk" />
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_90"
+        android:layout_marginLeft="@dimen/dp_75"
+        android:layout_marginRight="@dimen/dp_75"
+        android:background="@mipmap/qifu_zhulian_new" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"
+        android:src="@mipmap/lingji_qifutai_back" />
+
+    <ImageView
+        android:id="@+id/iv_more"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_45"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_10"
+        android:src="@mipmap/lingji_qifutai_more" />
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/v_1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            app:layout_heightPercent="26%"
+            app:layout_widthPercent="0%" />
+
+        <View
+            android:id="@+id/v_2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            app:layout_heightPercent="55%"
+            app:layout_widthPercent="0%" />
+
+        <ImageView
+            android:id="@+id/iv_st"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_0"
+            android:layout_below="@id/v_2"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/qifu_shentai_1"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="45%" />
+
+
+        <ImageView
+            android:id="@+id/iv_sx"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_0"
+            android:layout_below="@id/v_1"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/god_23"
+            app:layout_heightPercent="35%"
+            app:layout_widthPercent="70%" />
+        <View
+            android:id="@+id/v_3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            app:layout_heightPercent="48%"
+            app:layout_widthPercent="0%" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/v_3"
+            android:layout_marginLeft="@dimen/dp_35"
+            android:src="@mipmap/lingji_qifutai_vase_light"
+            app:layout_widthPercent="25%" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/v_3"
+            android:layout_marginRight="@dimen/dp_35"
+            android:src="@mipmap/lingji_qifutai_vase"
+            app:layout_widthPercent="25%" />
+
+        <View
+            android:id="@+id/v_4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            app:layout_heightPercent="53%"
+            app:layout_widthPercent="0%" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_0"
+            android:layout_below="@id/v_4"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/lingji_qifutai_xiang1"
+            app:layout_heightPercent="30%"
+            app:layout_widthPercent="25%" />
+
+
+
+
+
+
+    </android.support.percent.PercentRelativeLayout>
+
+
+
+
+
+</RelativeLayout>

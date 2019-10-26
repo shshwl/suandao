@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.she.suandao.customview.tabview.TabContainerView
+        android:id="@+id/tab_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="false"
+        app:divideLineColor="@color/common_line_two"
+        app:divideLineHeight="0.3dp"
+        app:drawablePadding="2dp"
+        app:iconHeight="20dp"
+        app:iconWidth="20dp"
+        app:tabTextColor="@color/color_000"
+        app:tabTextSize="@dimen/text_size_10" />
+
+</RelativeLayout>

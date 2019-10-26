@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.she.suandao"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    greendao {
+        schemaVersion 1 //数据库版本号
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:27.+'
+    implementation 'com.android.support:support-v13:27.+'
+    implementation 'com.android.support:design:27.+'
+    implementation 'com.android.support:recyclerview-v7:27.+'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation project(path: ':framworklib')
+
+    //butterknife
+    implementation 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+
+    implementation 'com.umeng.analytics:analytics:latest.integration'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.9.0'
+//glide
+    implementation 'com.github.bumptech.glide:glide:4.0.0-RC1'
+    //拍照
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.android.support:multidex:1.+'
+    //banner
+    implementation 'com.bigkoo:convenientbanner:2.0.5'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:percent:25.3.0'
+
+    implementation 'org.greenrobot:greendao:3.2.2'
+    // 基础依赖包，必须要依赖
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0-beta05'
+// fragment快速实现（可选）
+    implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0-beta05'
+
+
+}

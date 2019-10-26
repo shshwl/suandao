@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">算道</string>
+    <string name="unit_second">秒后重发</string>
+    <string name="login_register_toast_1">请输入正确的手机号码</string>
+    <string name="login_register_toast_2">请输入正确的验证码</string>
+    <string name="login_register_code_get_remain">剩余</string>
+    <string name="login_register_code_get">获取验证码</string>
+</resources>
