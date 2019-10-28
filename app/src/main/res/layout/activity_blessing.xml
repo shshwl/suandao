@@ -18,7 +18,7 @@
             android:layout_weight="0.20" />
 
         <ImageView
-            android:id="@+id/line2"
+            android:id="@+id/iv_fx_bg"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_0"
             android:layout_weight="0.40"
@@ -98,6 +98,7 @@
             android:src="@mipmap/god_23"
             app:layout_heightPercent="35%"
             app:layout_widthPercent="70%" />
+
         <View
             android:id="@+id/v_3"
             android:layout_width="0dp"
@@ -117,8 +118,8 @@
         <ImageView
             android:layout_width="@dimen/dp_0"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:layout_below="@id/v_3"
+            android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/dp_35"
             android:src="@mipmap/lingji_qifutai_vase"
             app:layout_widthPercent="25%" />
@@ -136,7 +137,7 @@
             android:layout_height="@dimen/dp_0"
             android:layout_below="@id/v_4"
             android:layout_centerHorizontal="true"
-            android:src="@mipmap/lingji_qifutai_xiang1"
+            android:src="@drawable/lingji_qifutai_xiang_empty"
             app:layout_heightPercent="30%"
             app:layout_widthPercent="25%" />
 
@@ -146,9 +147,6 @@
 
 
     </android.support.percent.PercentRelativeLayout>
-
-
-
 
 
 </RelativeLayout>
