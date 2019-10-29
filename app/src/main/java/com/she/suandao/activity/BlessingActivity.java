@@ -30,6 +30,8 @@ public class BlessingActivity extends BaseFragmentActivity {
     protected void initData() {
         daoSession = BaseApplication.getInstance().getDaoSession();
         queryBuddhaList();
+
+
         queryTributeList();
     }
 
