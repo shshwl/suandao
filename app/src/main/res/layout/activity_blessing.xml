@@ -139,7 +139,9 @@
             android:layout_centerHorizontal="true"
             android:src="@drawable/lingji_qifutai_xiang_empty"
             app:layout_heightPercent="30%"
+
             app:layout_widthPercent="25%" />
+
 
     </android.support.percent.PercentRelativeLayout>
 
