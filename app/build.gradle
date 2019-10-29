@@ -2,6 +2,10 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'org.greenrobot.greendao'
 
+def releaseTime() {
+    return new Date().format("yyyy.MM.dd", TimeZone.getTimeZone("UTC"))
+}
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -10,18 +14,93 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+        ndk {
+            abiFilters 'armeabi'
+        }
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        debug {
+            keyAlias 'suandao'
+            keyPassword 'suandao2019'
+            storeFile file('/keystore/suandao.jks')
+            storePassword 'suandao2019'
+        }
+
+        release {
+            keyAlias 'suandao'
+            keyPassword 'suandao2019'
+            storeFile file('/keystore/suandao.jks')
+            storePassword 'suandao2019'
+            v2SigningEnabled true
+        }
     }
 
     greendao {
         schemaVersion 1 //数据库版本号
     }
-
+    lintOptions {
+        abortOnError false
+        disable 'MissingTranslation'
+    }
     buildTypes {
         release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            // 混淆
             minifyEnabled false
+            // Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
+            //前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明，后一个文件是自己的定义混淆文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        // 输出apk名称为xxx_v1.0_2015-01-15_wandoujia.apk  xxx可以进行自定义
+                        def fileName = "she_v${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+                        output.outputFileName = fileName
+                    }
+                }
+            }
         }
+    }
+
+
+    flavorDimensions "default"
+    // 友盟多渠道打包
+    productFlavors {
+        _360 { manifestPlaceholders = [UMENG_CHANNEL_VALUE: "360"] }
+        yingyongbao { manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yingyongbao"] }
+        xiaomi { manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"] }
+        huawei { manifestPlaceholders = [UMENG_CHANNEL_VALUE: "huawei"] }
+        oppo { manifestPlaceholders = [UMENG_CHANNEL_VALUE: "oppo"] }
+        baidu { manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"] }
+        vivo { manifestPlaceholders = [UMENG_CHANNEL_VALUE: "vivo"] }
+        lishi { manifestPlaceholders = [UMENG_CHANNEL_VALUE: "lishi"] }
+        meizu { manifestPlaceholders = [UMENG_CHANNEL_VALUE: "meizu"] }
+        sougou { manifestPlaceholders = [UMENG_CHANNEL_VALUE: "sougou"] }
+        samsung { manifestPlaceholders = [UMENG_CHANNEL_VALUE: "samsung"] }
+        wandoujia { manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"] }
+        promotion { manifestPlaceholders = [UMENG_CHANNEL_VALUE: "promotion"] }
+
+    }
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
     }
 }
 
